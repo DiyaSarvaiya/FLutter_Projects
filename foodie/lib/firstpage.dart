@@ -42,6 +42,7 @@ class Firstpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.only(top: 60, bottom: 40),
         child: Center(
@@ -49,32 +50,40 @@ class Firstpage extends StatelessWidget {
             children: [
               texts('FOODECA', 25, Colors.black, FontWeight.w800),
               Expanded(
-                  child: Padding(
-                padding: const EdgeInsets.only(top: 40),
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    Column(
-                      children: [
-                        cimage('assets/images/sushi.png', 120, 1),
-                        cimage('assets/images/wrap.png', 190, 2),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        cimage('assets/images/pizza.png', 200, 1),
-                        cimage('assets/images/cake.png', 140, 2),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        cimage('assets/images/soup.png', 150, 1),
-                        cimage('assets/images/salad.png', 220, 2),
-                      ],
-                    )
-                  ],
+                child: Container(
+                  child: Image.asset(
+                    'assets/images/food.png',
+                    fit: BoxFit.fill,
+                  ),
                 ),
-              )),
+              ),
+              // Expanded(
+              //     child: Padding(
+              //   padding: const EdgeInsets.only(top: 40),
+              //   child: ListView(
+              //     scrollDirection: Axis.horizontal,
+              //     children: [
+              //       Column(
+              //         children: [
+              //           cimage('assets/images/sushi.png', 120, 1),
+              //           cimage('assets/images/wrap.png', 190, 2),
+              //         ],
+              //       ),
+              //       Column(
+              //         children: [
+              //           cimage('assets/images/pizza.png', 200, 1),
+              //           cimage('assets/images/cake.png', 140, 2),
+              //         ],
+              //       ),
+              //       Column(
+              //         children: [
+              //           cimage('assets/images/soup.png', 150, 1),
+              //           cimage('assets/images/salad.png', 220, 2),
+              //         ],
+              //       )
+              //     ],
+              //   ),
+              // )),
               texts(
                   'Choose your preferences', 12, Colors.black, FontWeight.w300),
               Padding(

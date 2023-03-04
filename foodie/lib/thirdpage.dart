@@ -25,6 +25,7 @@ class ThirdPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.black87,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
@@ -61,7 +62,7 @@ class ThirdPage extends StatelessWidget {
                         children: [
                           Expanded(
                               child: Padding(
-                            padding: const EdgeInsets.all(15.0),
+                            padding: const EdgeInsets.all(20.0),
                             child: Row(
                               children: [
                                 Expanded(
@@ -82,65 +83,87 @@ class ThirdPage extends StatelessWidget {
                                     ],
                                   ),
                                 )),
-                                Align(
-                                  alignment: Alignment.topRight,
-                                  child: MaterialButton(
-                                    onPressed: () {},
-                                    color: Colors.white70,
-                                    textColor: Colors.black45,
-                                    child: Icon(size: 20, Icons.numbers),
-                                    shape: CircleBorder(),
+                                // Align(
+                                //   alignment: Alignment.topRight,
+                                //   child: MaterialButton(
+                                //     onPressed: () {},
+                                //     color: Colors.white70,
+                                //     textColor: Colors.black45,
+                                //     child: Icon(size: 20, Icons.numbers),
+                                //     shape: CircleBorder(),
+                                //   ),
+                                // ),
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Container(
+                                    color: Colors.grey.shade300,
+                                    height: 40,
+                                    width: 40,
+                                    child: TextButton(
+                                        onPressed: () {},
+                                        child: Texts(
+                                          text: '1/4',
+                                          color: Colors.black,
+                                        )),
                                   ),
-                                ),
+                                )
                               ],
                             ),
                           )),
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(30),
-                              child: Container(
-                                height: 30,
-                                width: 170,
-                                color: Colors.black,
-                                child: Expanded(
-                                  child: Row(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.only(left: 8),
-                                        child: Texts(
-                                          text: '  ADD SPICES',
-                                          color: Colors.white,
-                                          size: 13,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 40),
-                                        child: Icon(
-                                          Icons.arrow_right,
-                                          color: Colors.white,
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          ClipRRect(
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(200),
-                              topRight: Radius.circular(200),
-                            ),
-                            child: Container(
-                              height: 140,
-                              width: 270,
-                              child: Image.asset(
-                                'assets/images/pizza.png',
-                                fit: BoxFit.cover,
-                              ),
+                          // Padding(
+                          //   padding: const EdgeInsets.all(10.0),
+                          //   child: ClipRRect(
+                          //     borderRadius: BorderRadius.circular(30),
+                          //     child: Container(
+                          //       height: 30,
+                          //       width: 170,
+                          //       color: Colors.black,
+                          //       child: Expanded(
+                          //         child: Row(
+                          //           children: [
+                          //             Padding(
+                          //               padding: const EdgeInsets.only(left: 8),
+                          //               child: Texts(
+                          //                 text: '  ADD SPICES',
+                          //                 color: Colors.white,
+                          //                 size: 13,
+                          //                 fontWeight: FontWeight.w600,
+                          //               ),
+                          //             ),
+                          //             Padding(
+                          //               padding:
+                          //                   const EdgeInsets.only(left: 40),
+                          //               child: Icon(
+                          //                 Icons.arrow_right,
+                          //                 color: Colors.white,
+                          //               ),
+                          //             )
+                          //           ],
+                          //         ),
+                          //       ),
+                          //     ),
+                          //   ),
+                          // ),
+                          // ClipRRect(
+                          //   borderRadius: BorderRadius.only(
+                          //     topLeft: Radius.circular(200),
+                          //     topRight: Radius.circular(200),
+                          //   ),
+                          //   child: Container(
+                          //     height: 140,
+                          //     width: 270,
+                          //     child: Image.asset(
+                          //       'assets/images/pizza.png',
+                          //       fit: BoxFit.cover,
+                          //     ),
+                          //   ),
+                          // )
+                          Container(
+                            height: 200,
+                            width: 320,
+                            child: Image.asset(
+                              'assets/images/dish.png',
+                              fit: BoxFit.fill,
                             ),
                           )
                         ],
@@ -188,11 +211,12 @@ class ThirdPage extends StatelessWidget {
                               borderRadius: BorderRadius.circular(20),
                               child: Container(
                                 child: Padding(
-                                  padding: const EdgeInsets.all(10.0),
+                                  padding:
+                                      const EdgeInsets.only(top: 20, right: 20),
                                   child: Column(
                                     children: [
                                       Texts(
-                                        text: 'Progress rate',
+                                        text: 'rateing',
                                         color: Colors.white,
                                         size: 10,
                                         fontWeight: FontWeight.w400,
@@ -209,7 +233,7 @@ class ThirdPage extends StatelessWidget {
                                     ],
                                   ),
                                 ),
-                                color: Color(0xFF6233D2),
+                                color: Color.fromRGBO(99, 69, 254, 100),
                               ),
                             ),
                           )),
@@ -233,28 +257,32 @@ class ThirdPage extends StatelessWidget {
                                       //Icon(Icons.lock_clock_rounded),
                                       MaterialButton(
                                         onPressed: () {},
-                                        color: Colors.white24,
+                                        color:
+                                            Color.fromRGBO(243, 243, 243, 100),
                                         textColor: Colors.black45,
                                         child: Icon(
                                             size: 20, Icons.timer_outlined),
-                                        padding: EdgeInsets.all(1),
                                         shape: CircleBorder(),
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.only(
-                                            top: 10, bottom: 3),
+                                            top: 30, bottom: 3),
                                         child: Texts(
-                                          text: 'time',
+                                          text: 'Delivery time',
                                           color: Colors.black,
                                           size: 10,
                                           fontWeight: FontWeight.w700,
                                         ),
                                       ),
-                                      Texts(
-                                        text: '12:45',
-                                        color: Colors.black,
-                                        size: 18,
-                                        fontWeight: FontWeight.w700,
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(bottom: 3),
+                                        child: Texts(
+                                          text: '12:45',
+                                          color: Colors.black,
+                                          size: 20,
+                                          fontWeight: FontWeight.w900,
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -312,14 +340,14 @@ class ThirdPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                         child: Container(
                           alignment: AlignmentDirectional.topEnd,
-                          color: Color.fromARGB(255, 200, 233, 247),
+                          color: Color.fromRGBO(207, 239, 250, 1),
                           child: Column(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(15.0),
+                                padding: const EdgeInsets.all(25.0),
                                 child: MaterialButton(
                                   onPressed: () {},
-                                  color: Colors.blueGrey.shade100,
+                                  color: Color.fromRGBO(185, 209, 255, 1),
                                   textColor: Colors.white,
                                   child: Icon(size: 20, Icons.payment_outlined),
                                   padding: EdgeInsets.all(1),
@@ -343,38 +371,88 @@ class ThirdPage extends StatelessWidget {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.only(
-                                    top: 60, bottom: 3, left: 3, right: 3),
+                                padding: const EdgeInsets.only(top: 58),
                                 child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Container(
-                                      height: 50,
-                                      width: 150,
-                                      color: Colors.white,
-                                      child: Row(
-                                        children: [
-                                          MaterialButton(
-                                            onPressed: () {},
-                                            color: Colors.black,
-                                            textColor: Colors.white,
-                                            child: Icon(
-                                                size: 20,
-                                                Icons.payments_outlined),
-                                            padding: EdgeInsets.all(1),
-                                            shape: CircleBorder(),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                const EdgeInsets.only(right: 5),
-                                            child: Texts(
-                                              text: 'Pay now',
-                                              size: 10,
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Container(
+                                    height: 60,
+                                    color: Colors.white,
+                                    child: Row(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(30),
+                                            child: Container(
+                                              color: Colors.black,
+                                              height: 45,
+                                              width: 45,
+                                              child: Icon(
+                                                Icons
+                                                    .keyboard_double_arrow_right_outlined,
+                                                color: Colors.white,
+                                              ),
                                             ),
-                                          )
-                                        ],
-                                      ),
-                                    )),
+                                          ),
+                                        ),
+                                        Texts(
+                                            text: 'Pay now',
+                                            size: 13,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.w400)
+                                        // Padding(
+                                        //   padding:
+                                        //       const EdgeInsets.only(right: 0),
+                                        //   child: MaterialButton(
+                                        //     height: 45,
+                                        //     onPressed: () {},
+                                        //     shape: CircleBorder(),
+                                        //     child: Icon(
+                                        //       Icons.payment_outlined,
+                                        //       color: Colors.white,
+                                        //     ),
+                                        //     color: Colors.black,
+                                        //   ),
+                                        // ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
                               )
+                              // Padding(
+                              //   padding: const EdgeInsets.only(
+                              //       top: 60, bottom: 3, left: 3, right: 3),
+                              //   child: ClipRRect(
+                              //       borderRadius: BorderRadius.circular(20),
+                              //       child: Container(
+                              //         height: 50,
+                              //         width: 150,
+                              //         color: Colors.white,
+                              //         child: Row(
+                              //           children: [
+                              //             MaterialButton(
+                              //               onPressed: () {},
+                              //               color: Colors.black,
+                              //               textColor: Colors.white,
+                              //               child: Icon(
+                              //                   size: 20,
+                              //                   Icons.payments_outlined),
+                              //               padding: EdgeInsets.all(1),
+                              //               shape: CircleBorder(),
+                              //             ),
+                              //             Padding(
+                              //               padding:
+                              //                   const EdgeInsets.only(right: 5),
+                              //               child: Texts(
+                              //                 text: 'Pay now',
+                              //                 size: 10,
+                              //               ),
+                              //             )
+                              //           ],
+                              //         ),
+                              //       )),
+                              // )
                             ],
                           ),
                         ),
